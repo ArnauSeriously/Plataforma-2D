@@ -48,6 +48,18 @@ public class Player : MonoBehaviour
     {
         playerInputHorizontal= Input.GetAxis("Horizontal");
 
+        if(playerInputHorizontal <0)
+       {
+        transform.rotation = Quaternion.Euler(0,180,0);
+       }
+
+       else if(playerInputHorizontal >0)
+
+        {
+        transform.rotation = Quaternion.Euler(0,0,0);
+       }
+
+
         if(playerInputHorizontal != 0)
         {
             animator.SetBool("isWalking", true);
@@ -67,4 +79,9 @@ public class Player : MonoBehaviour
          rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
     }
+    public void SignalTest()
+        {
+Debug.Log("Señal recibida");
+        }
+    
 }
