@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     {
         rBody2D = GetComponent<Rigidbody2D>();
         sensor = GetComponentInChildren<GroundSensor>();
+        Debug.Log(GameManager.instance.vida);
      
     }
 
